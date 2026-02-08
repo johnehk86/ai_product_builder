@@ -230,3 +230,32 @@ h1 {
 .spinning .menu-emoji {
     animation: spin 0.5s ease;
 }
+
+/* Navigation Styles */
+nav {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--button-bg);
+}
+
+/* Footer Styles */
+footer {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: var(--subtitle-color);
+}
