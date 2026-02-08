@@ -1,0 +1,232 @@
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --container-bg: #fff;
+    --button-bg: #4CAF50;
+    --button-text: white;
+    --card-bg: #fafafa;
+    --card-border: #e0e0e0;
+    --category-bg: #e8e8e8;
+    --category-active-bg: #4CAF50;
+    --category-active-text: white;
+    --history-bg: #f5f5f5;
+    --subtitle-color: #777;
+}
+
+body.dark-mode {
+    --background-color: #1a1a2e;
+    --text-color: #eee;
+    --container-bg: #16213e;
+    --button-bg: #e94560;
+    --button-text: #fff;
+    --card-bg: #0f3460;
+    --card-border: #1a1a4e;
+    --category-bg: #0f3460;
+    --category-active-bg: #e94560;
+    --category-active-text: #fff;
+    --history-bg: #0f3460;
+    --subtitle-color: #aaa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    padding: 20px;
+}
+
+.theme-switcher {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+#theme-toggle {
+    padding: 8px 16px;
+    border: 2px solid var(--text-color);
+    border-radius: 20px;
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.container {
+    text-align: center;
+    background-color: var(--container-bg);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    max-width: 500px;
+    width: 100%;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.subtitle {
+    color: var(--subtitle-color);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+.category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--category-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    opacity: 0.8;
+}
+
+.category-btn.active {
+    background-color: var(--category-active-bg);
+    color: var(--category-active-text);
+}
+
+#generator-btn {
+    padding: 14px 40px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+#generator-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+#generator-btn:active {
+    transform: scale(0.98);
+}
+
+.menu-display {
+    display: none;
+    margin-bottom: 24px;
+}
+
+.menu-display.show {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.menu-card {
+    background-color: var(--card-bg);
+    border: 2px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.menu-emoji {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.menu-name {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+}
+
+.menu-category-tag {
+    display: inline-block;
+    background-color: var(--category-active-bg);
+    color: var(--category-active-text);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+}
+
+.menu-desc {
+    color: var(--subtitle-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.history {
+    display: none;
+    text-align: left;
+}
+
+.history.show {
+    display: block;
+}
+
+.history h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    color: var(--subtitle-color);
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    background-color: var(--history-bg);
+    padding: 8px 14px;
+    border-radius: 8px;
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinning .menu-emoji {
+    animation: spin 0.5s ease;
+}

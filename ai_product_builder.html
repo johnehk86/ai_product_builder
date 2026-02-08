@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오늘 저녁 뭐 먹지?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="theme-switcher">
+        <button id="theme-toggle">Dark Mode</button>
+    </div>
+    <div class="container">
+        <h1>오늘 저녁 뭐 먹지?</h1>
+        <p class="subtitle">카테고리를 선택하고 추천 받아보세요!</p>
+
+        <div class="category-buttons">
+            <button class="category-btn active" data-category="all">전체</button>
+            <button class="category-btn" data-category="korean">한식</button>
+            <button class="category-btn" data-category="chinese">중식</button>
+            <button class="category-btn" data-category="japanese">일식</button>
+            <button class="category-btn" data-category="western">양식</button>
+            <button class="category-btn" data-category="snack">분식</button>
+        </div>
+
+        <button id="generator-btn">메뉴 추천!</button>
+
+        <div id="menu-display" class="menu-display">
+            <div id="menu-card" class="menu-card">
+                <span id="menu-emoji" class="menu-emoji"></span>
+                <h2 id="menu-name" class="menu-name"></h2>
+                <p id="menu-category" class="menu-category-tag"></p>
+                <p id="menu-desc" class="menu-desc"></p>
+            </div>
+        </div>
+
+        <div id="history" class="history">
+            <h3>추천 기록</h3>
+            <ul id="history-list"></ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
