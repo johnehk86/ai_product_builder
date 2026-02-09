@@ -4,7 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-adsense-account" content="ca-pub-6892267130022389">
-    <title>오늘 저녁 뭐 먹지?</title>
+    <title>오늘 저녁 뭐 먹지? | 저녁 메뉴 추천 서비스</title>
+
+    <!-- SEO 기본 메타태그 -->
+    <meta name="description" content="매일 저녁 메뉴 고민 해결! 한식, 중식, 일식, 양식, 분식 카테고리에서 랜덤 메뉴 추천을 받아보세요. 레시피와 재료 정보까지 한번에!">
+    <meta name="keywords" content="저녁메뉴,메뉴추천,오늘저녁,뭐먹지,저녁메뉴추천,랜덤메뉴,한식,중식,일식,양식,분식">
+    <meta name="author" content="오늘 저녁 뭐 먹지?">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://craftai.work/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="오늘 저녁 뭐 먹지? | 저녁 메뉴 추천 서비스">
+    <meta property="og:description" content="매일 저녁 메뉴 고민 해결! 한식, 중식, 일식, 양식, 분식 카테고리에서 랜덤 메뉴 추천을 받아보세요.">
+    <meta property="og:url" content="https://craftai.work/">
+    <meta property="og:site_name" content="오늘 저녁 뭐 먹지?">
+    <meta property="og:locale" content="ko_KR">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="오늘 저녁 뭐 먹지? | 저녁 메뉴 추천 서비스">
+    <meta name="twitter:description" content="매일 저녁 메뉴 고민 해결! 한식, 중식, 일식, 양식, 분식 카테고리에서 랜덤 메뉴 추천을 받아보세요.">
+
+    <!-- JSON-LD 구조화된 데이터 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "오늘 저녁 뭐 먹지?",
+        "description": "매일 저녁 메뉴 고민 해결! 한식, 중식, 일식, 양식, 분식 카테고리에서 랜덤 메뉴 추천을 받아보세요.",
+        "url": "https://craftai.work/",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "Web",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "KRW"
+        },
+        "inLanguage": "ko"
+    }
+    </script>
+
     <link rel="stylesheet" href="style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6892267130022389"
          crossorigin="anonymous"></script>
@@ -14,7 +54,7 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
+
       gtag('config', 'G-N0NQDNJ148');
     </script>
     <script type="text/javascript">
@@ -27,13 +67,16 @@
     <link rel="icon" href="favicon.ico">
 </head>
 <body>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
     <!-- Top Banner Ad -->
-    <div class="ad-container ad-top">
+    <aside class="ad-container ad-top">
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-6892267130022389"
@@ -41,40 +84,46 @@
              data-ad-format="auto"
              data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-    </div>
+    </aside>
 
     <div class="theme-switcher">
         <button id="theme-toggle">Dark Mode</button>
     </div>
-    <div class="container">
-        <h1>오늘 저녁 뭐 먹지?</h1>
-        <p class="subtitle">카테고리를 선택하고 추천 받아보세요!</p>
 
-        <div class="category-buttons">
-            <button class="category-btn active" data-category="all">전체</button>
-            <button class="category-btn" data-category="korean">한식</button>
-            <button class="category-btn" data-category="chinese">중식</button>
-            <button class="category-btn" data-category="japanese">일식</button>
-            <button class="category-btn" data-category="western">양식</button>
-            <button class="category-btn" data-category="snack">분식</button>
+    <main>
+        <div class="container">
+            <h1>오늘 저녁 뭐 먹지?</h1>
+            <p class="subtitle">카테고리를 선택하고 추천 받아보세요!</p>
+
+            <section class="category-section">
+                <div class="category-buttons">
+                    <button class="category-btn active" data-category="all">전체</button>
+                    <button class="category-btn" data-category="korean">한식</button>
+                    <button class="category-btn" data-category="chinese">중식</button>
+                    <button class="category-btn" data-category="japanese">일식</button>
+                    <button class="category-btn" data-category="western">양식</button>
+                    <button class="category-btn" data-category="snack">분식</button>
+                </div>
+
+                <button id="generator-btn">메뉴 추천!</button>
+            </section>
+
+            <section id="menu-display" class="menu-display">
+                <div id="menu-card" class="menu-card">
+                    <span id="menu-emoji" class="menu-emoji"></span>
+                    <h2 id="menu-name" class="menu-name"></h2>
+                    <p id="menu-category" class="menu-category-tag"></p>
+                    <p id="menu-desc" class="menu-desc"></p>
+                </div>
+            </section>
+
+            <section id="history" class="history">
+                <h3>추천 기록</h3>
+                <ul id="history-list"></ul>
+            </section>
         </div>
+    </main>
 
-        <button id="generator-btn">메뉴 추천!</button>
-
-        <div id="menu-display" class="menu-display">
-            <div id="menu-card" class="menu-card">
-                <span id="menu-emoji" class="menu-emoji"></span>
-                <h2 id="menu-name" class="menu-name"></h2>
-                <p id="menu-category" class="menu-category-tag"></p>
-                <p id="menu-desc" class="menu-desc"></p>
-            </div>
-        </div>
-
-        <div id="history" class="history">
-            <h3>추천 기록</h3>
-            <ul id="history-list"></ul>
-        </div>
-    </div>
     <script src="main.js"></script>
     <footer>
         <p>&copy; 2024 오늘 저녁 뭐 먹지?. All Rights Reserved.</p>

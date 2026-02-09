@@ -251,6 +251,26 @@ nav a:hover {
     color: var(--button-bg);
 }
 
+/* Header Styles */
+header {
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Main Styles */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Aside (Ad) Styles */
+aside.ad-container {
+    width: 100%;
+    max-width: 500px;
+}
+
 /* Footer Styles */
 footer {
     width: 100%;
