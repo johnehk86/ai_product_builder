@@ -188,6 +188,85 @@ h1 {
     line-height: 1.5;
 }
 
+/* Share Buttons */
+.share-buttons {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--card-border);
+}
+
+.share-label {
+    font-size: 0.85rem;
+    color: var(--subtitle-color);
+    margin-bottom: 10px;
+}
+
+.share-btn-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-btn {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    color: #fff;
+}
+
+.share-btn:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.share-btn:active {
+    transform: scale(0.95);
+}
+
+.share-twitter {
+    background-color: #000;
+}
+
+.share-facebook {
+    background-color: #1877F2;
+}
+
+.share-naver {
+    background-color: #03C75A;
+}
+
+.share-copy {
+    background-color: #666;
+}
+
+body.dark-mode .share-copy {
+    background-color: #888;
+}
+
+.share-native {
+    background-color: var(--button-bg);
+    display: none;
+}
+
+.share-toast {
+    font-size: 0.8rem;
+    color: var(--button-bg);
+    margin-top: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.share-toast.show {
+    opacity: 1;
+}
+
 .history {
     display: none;
     text-align: left;

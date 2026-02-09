@@ -155,3 +155,65 @@ generatorBtn.addEventListener('click', () => {
     const menu = getRandomMenu();
     showMenu(menu);
 });
+
+// ===== SNS Share =====
+const siteUrl = 'https://craftai.work/';
+let currentMenu = null;
+
+function getShareText() {
+    if (!currentMenu) return '';
+    return `${currentMenu.emoji} 오늘 저녁은 "${currentMenu.name}" 어때? | 오늘 저녁 뭐 먹지?`;
+}
+
+const originalShowMenu = showMenu;
+showMenu = function(menu) {
+    currentMenu = menu;
+    originalShowMenu(menu);
+};
+
+// Show native share button only if Web Share API is supported
+if (navigator.share) {
+    document.getElementById('share-native').style.display = 'flex';
+}
+
+document.getElementById('share-twitter').addEventListener('click', () => {
+    const text = getShareText();
+    window.open(
+        `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(siteUrl)}`,
+        '_blank', 'width=600,height=400'
+    );
+});
+
+document.getElementById('share-facebook').addEventListener('click', () => {
+    window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(siteUrl)}&quote=${encodeURIComponent(getShareText())}`,
+        '_blank', 'width=600,height=400'
+    );
+});
+
+document.getElementById('share-naver').addEventListener('click', () => {
+    const text = getShareText();
+    window.open(
+        `https://share.naver.com/web/shareView?url=${encodeURIComponent(siteUrl)}&title=${encodeURIComponent(text)}`,
+        '_blank', 'width=600,height=400'
+    );
+});
+
+document.getElementById('share-copy').addEventListener('click', () => {
+    const text = `${getShareText()} ${siteUrl}`;
+    navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('share-toast');
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 2000);
+    });
+});
+
+document.getElementById('share-native').addEventListener('click', () => {
+    if (navigator.share) {
+        navigator.share({
+            title: '오늘 저녁 뭐 먹지?',
+            text: getShareText(),
+            url: siteUrl
+        });
+    }
+});
